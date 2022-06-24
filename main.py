@@ -40,7 +40,7 @@ async def handle_new_message(event):
         # get message user name
         user = await event.client.get_entity(ids)
         print(user.first_name)
-        if user.first_name == "DataSaham2Bot":
+        if user.first_name == "DataSahamBot":
             print("Bot Detected")
             # get message text
             print(event.message.message)
