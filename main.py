@@ -25,7 +25,7 @@ groups=[]
 bot = []
 channel = "1623988554"
 # get all channels
-channel_username = 'DataSahamBot'# your channel
+channel_username = 'DataSaham2Bot'# your channel
 groupUsername = "Python group.py"# your group
 # message = []
 # for message in client.get_messages(channel_username, limit=1):
@@ -40,7 +40,7 @@ async def handle_new_message(event):
         # get message user name
         user = await event.client.get_entity(ids)
         print(user.first_name)
-        if user.first_name == "DataSahamBot":
+        if user.first_name == "DataSaham2Bot":
             print("Bot Detected")
             # get message text
             print(event.message.message)
