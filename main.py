@@ -36,16 +36,17 @@ groupUsername = "Python group.py"# your group
 async def handle_new_message(event):
     if event.is_private:
         chat = event.message.message
-        ids = event.message.from_id
-        # get message user name
-        user = await event.client.get_entity(ids)
-        print(user.first_name)
-        if user.first_name == "DataSaham2Bot":
-            print("Bot Detected")
-            # get message text
-            print(event.message.message)
-            # send message to channel
-            await client.send_message(groupUsername, chat)
+        # if message contains picture then download it and send it
+        # get user name
+        user = event.message.sender_id
+#         print(user)
+        if user == 1623988554:
+#             print("bot detected")
+            if event.message.media:
+                if event.message.media.photo:
+                    await event.message.forward_to(groupUsername)
+            else:
+                await event.message.forward_to(groupUsername)
 # if get new message
 client.start()
 client.run_until_disconnected()
